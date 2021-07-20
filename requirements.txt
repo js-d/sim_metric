@@ -1,0 +1,5 @@
+scipy==1.6.0
+icecream==2.1.0
+matplotlib==3.3.4
+numpy==1.20.1
+pandas==1.2.2

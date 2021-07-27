@@ -13,6 +13,14 @@
 
 ### `sim_metric_resources`
 
+* `embeddings` contains the embeddings between which we are computing dissimilarities
+* `dists` contains, for every experiment, the dissimilarities between the corresponding embeddings, for every metric:
+    - `dists.csv` contains the precomputed dissimilarities
+    - `dists_self_computed.csv` contains the dissimilarities computed by running `compute_dists.py` (see below)
+    - in `pca_deletion`, `dists_paper.csv` contains the mistaken dissimilarities we used in the Neurips submission: running the experiments with these dissimilarities reproduces the results in the submission
+* `scores` contains, for every experiment, the accuracy scores of the embeddings
+* `full_dfs` contains, for every experiment, a csv file aggregating the dissimilarities and accuracy differences between the embeddings
+
 
 ## Instructions
 
@@ -25,10 +33,10 @@
 
 For every experiment (eg `feather`, `pretrain_finetune`, `layer_exp`, or `pca_deletion`):
 * the relevant dissimilarities and accuracies differences have already been precomputed and aggregated in a dataframe `full_df`
+* make sure that `dists_path` and `full_df_path` in `compute_full_df.py`, `script.py` and `notebook.ipynb` are set to `dists.csv` and `full_df.csv`, and not `dists_self_computed.csv` and `full_df_self_computed.csv`.
 * to get the results, you can:
-    - run the notebook `notebook.ipynb` in the experiment's folder, or 
+    - run the notebook `notebook.ipynb`, or
     - run `script.py` in the experiment's folder, and find the results in `results.txt`, in the same folder
-
 To run the scripts for all four experiments, run `experiments/script.py`.
 
 ### Recomputing dissimilarities
@@ -36,6 +44,7 @@ To run the scripts for all four experiments, run `experiments/script.py`.
 For every experiment, you can:
 * recompute the dissimilarities between embeddings by running `compute_dists.py` in this experiment's folder
 * use these and the accuracy scores to recompute the aggregate dataframe by running `compute_full_df.py` in this experiment's folder
+* change `dists_path` and `full_df_path` in `compute_full_df.py`, `script.py` and `notebook.ipynb` from `dists.csv` and `full_df.csv` to `dists_self_computed.csv` and `full_df_self_computed.csv`
 * run the experiments with `script.py` or `notebook.ipynb` as above.
 
 ## To add your metric

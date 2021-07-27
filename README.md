@@ -17,7 +17,7 @@
 * `dists` contains, for every experiment, the dissimilarities between the corresponding embeddings, for every metric:
     - `dists.csv` contains the precomputed dissimilarities
     - `dists_self_computed.csv` contains the dissimilarities computed by running `compute_dists.py` (see below)
-    - in `pca_deletion`, `dists_paper.csv` contains the mistaken dissimilarities we used in the Neurips submission: running the experiments with these dissimilarities reproduces the results in the submission
+    - in `pca_deletion`, `dists_paper_mistaken.csv` contains the mistaken dissimilarities we used in the Neurips submission: running the experiments with these dissimilarities reproduces the results in the submission
 * `scores` contains, for every experiment, the accuracy scores of the embeddings
 * `full_dfs` contains, for every experiment, a csv file aggregating the dissimilarities and accuracy differences between the embeddings
 

@@ -47,14 +47,14 @@ def layer_sub_df(df, ref_depth, ref_seed):
 # Rank correlation results
 
 # the function to aggregate rank correlations is a bit different from the other experiments since in this case we sometimes have to aggregate both over depths and over seeds
-def aggregate_rank_corrs(df, task, num_layers, list_ref_seeds, METRICS, sub_df_fn):
+def aggregate_rank_corrs(df, task, layer_depths, list_ref_seeds, METRICS, sub_df_fn):
     rho = {metric: [] for metric in METRICS}
     rho_p = {metric: [] for metric in METRICS}
     tau = {metric: [] for metric in METRICS}
     tau_p = {metric: [] for metric in METRICS}
     bad_fracs = {metric: [] for metric in METRICS}
 
-    for ref_depth in range(num_layers):
+    for ref_depth in layer_depths:
         ref_seed = best_probing_seed(task, ref_depth, list_ref_seeds)
         sub_df = sub_df_fn(df, ref_depth, ref_seed)
         for metric in METRICS:
@@ -71,13 +71,13 @@ def aggregate_rank_corrs(df, task, num_layers, list_ref_seeds, METRICS, sub_df_f
 
 
 task = "QNLI"
-num_layers = 12
+layer_depths = [11]
 list_ref_seeds = list(range(1, 11))
 METRICS = ["Procrustes", "CKA", "PWCCA"]
 
 
 rho, rho_p, tau, tau_p, bad_fracs = aggregate_rank_corrs(
-    full_df, task, num_layers, list_ref_seeds, METRICS, layer_sub_df
+    full_df, task, layer_depths, list_ref_seeds, METRICS, layer_sub_df
 )
 
 

@@ -2,7 +2,7 @@ import os
 import json
 import numpy as np
 
-from utils import *
+from embedding_utils import *
 
 # TODO: this does not work yet, fix all the paths
 EMBEDDING_PATH = "/scratch/users/repsim/embeddings"  # deprecated

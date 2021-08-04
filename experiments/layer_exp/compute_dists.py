@@ -5,12 +5,12 @@ from icecream import ic
 import os
 import sys
 
+sys.path.append(os.path.abspath("../../"))
+from paths import resources_path
+
 sys.path.append(os.path.abspath("../../dists/"))
 from score_pair import *
 from utils import *
-
-sys.path.append(os.path.abspath("../.."))
-from paths import resources_path
 
 # result file
 result_filename = resources_path / pathlib.Path(

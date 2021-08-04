@@ -13,11 +13,11 @@ import os
 import pathlib
 import sys
 
-sys.path.append(os.path.abspath("../../dists/"))
-from score_pair import *
-
 sys.path.append(os.path.abspath("../.."))
 from paths import resources_path
+
+sys.path.append(os.path.abspath("../../dists/"))
+from score_pair import *
 
 # result file
 result_filename = resources_path / pathlib.Path(

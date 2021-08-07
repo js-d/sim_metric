@@ -8,22 +8,7 @@ import torch.nn as nn
 #from torchvision import models, transforms, datasets
 import pathlib
 
-# Language paths
-BERT_PATH = '/accounts/campus/frances/Documents/bert/'
-CODE_PATH = '/accounts/projects/jsteinhardt/repsim/similarity_metric/'
-BERT_CHECKPOINT_PATH = '/scratch/users/repsim/checkpoints/bert/'
-EMBEDDING_PATH = '/scratch/users/repsim/embeddings'
-PTB_PATH = '/accounts/campus/frances/Documents/probing/example/data/raw.ptb3.dev.txt'
-MNLI_MISMATCHED_PATH = '{}/data/mnli/multinli_1.0_dev_mismatched_fd_raw_tenth.txt'.format(CODE_PATH)
-MNLI_MATCHED_PATH = '{}/data/mnli/multinli_1.0_dev_matched_fd_raw_tenth.txt'.format(CODE_PATH)
-MNLI_MATCHED_100_PATH = '{}/data/mnli/multinli_1.0_dev_matched_fd_raw_hundredth.txt'.format(CODE_PATH)
-HANS_PATH = '{}/data/hans/heuristics_evaluation_set_fd_raw_tenth.txt'.format(CODE_PATH)
-HANS_100_PATH = '{}/data/hans/heuristics_evaluation_set_fd_raw_hundredth.txt'.format(CODE_PATH)
-BERT_BASE_DIR = '/data/frances/ruiqi-bert/feather/uncased_L-12_H-768_A-12/'
-
 # Vision paths
-DATA_PATH = "/data/js_denain/"
-SCRATCH_PATH = "/scratch/users/repsim/"
 DATASETS = ["tiny_imagenet", "imagenet"]
 ARCHITECTURES = [
     "resnet18",
